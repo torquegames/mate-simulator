@@ -48,5 +48,4 @@ public class TermoController : MonoBehaviour
             transform.rotation = nextRotation;
         }
     }
-        
 }

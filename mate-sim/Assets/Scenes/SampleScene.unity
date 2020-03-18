@@ -302,7 +302,6 @@ GameObject:
   - component: {fileID: 682793032}
   - component: {fileID: 682793031}
   - component: {fileID: 682793030}
-  - component: {fileID: 682793029}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -310,19 +309,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &682793029
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682793028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &682793030
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -383,6 +369,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &735099092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735099094}
+  - component: {fileID: 735099093}
+  m_Layer: 0
+  m_Name: waterPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &735099093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735099092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34899ab3f46a8d1468d2e8722e644c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6899287605904234374, guid: 8a66234059141114ba953a846265dd81, type: 3}
+  initialCapacity: 300
+--- !u!4 &735099094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735099092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.476595, y: -3.9821515, z: 13.4331}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785289705
 GameObject:
@@ -597,10 +628,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f2b06a0c0e460b912aec072adaa7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterPool: {fileID: 735099093}
   termoTransform: {fileID: 1192653222}
   waterPrefab: {fileID: 772836245427007311, guid: 8a66234059141114ba953a846265dd81,
     type: 3}
+  angleFromUp: 75
   timeBetweenDrops: 0.05
+--- !u!1 &1346789130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346789133}
+  - component: {fileID: 1346789132}
+  - component: {fileID: 1346789131}
+  m_Layer: 0
+  m_Name: WaterKiller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1346789131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346789130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa3853d37ac4674fbb951fd47eab9a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterPool: {fileID: 735099093}
+--- !u!65 &1346789132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346789130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1346789133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346789130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -45, z: 0}
+  m_LocalScale: {x: 90, y: 90, z: 90}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,13 +834,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842137939}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7068835, y: 0.017769296, z: 0.017769305, w: 0.7068835}
   m_LocalPosition: {x: 0, y: 0, z: 1.37}
   m_LocalScale: {x: 1.8926344, y: 0.09336353, z: 1.8926344}
   m_Children: []
   m_Father: {fileID: 5006512735934835460}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 2.88}
 --- !u!23 &1842137941
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -822,7 +913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ab080a0bf2a9a48b0374ef980e9bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDistance: 0.1
+  speed: 0.1
+  yDistance: 0.11
+  waterPool: {fileID: 735099093}
 --- !u!1 &1862039750
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +927,6 @@ GameObject:
   - component: {fileID: 1862039754}
   - component: {fileID: 1862039753}
   - component: {fileID: 1862039752}
-  - component: {fileID: 1862039751}
   - component: {fileID: 1862039755}
   - component: {fileID: 1862039756}
   m_Layer: 0
@@ -844,20 +936,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1862039751
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862039750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1862039752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6665,7 +6743,7 @@ MeshCollider:
   m_GameObject: {fileID: 8296172668064602391}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30

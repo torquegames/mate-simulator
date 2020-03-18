@@ -2,6 +2,9 @@ using UnityEngine;
 //poner en el pico
 public class WaterSpawn : MonoBehaviour
 {
+
+    public PoolService waterPool;
+    
     // el transform del termo, para leer cuan rotado está
     public Transform termoTransform;
     
@@ -33,7 +36,7 @@ public class WaterSpawn : MonoBehaviour
             {
                 // aca instancio la gota de agua y la ubico en la posicion del pico
                 /*TODO: investigar como funcionan los object pool para evitar instanciar/eliminar tantos gameobjects*/
-                Instantiate(waterPrefab, transform.position, transform.rotation);
+                waterPool.GetPool().Get().transform.position = transform.position;
                 //y reseteo el contador de tiempo
                 currentTime = 0;
             }
